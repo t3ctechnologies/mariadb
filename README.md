@@ -5,13 +5,13 @@
 
 ## Docker Images
 
-Images are built via [Travis CI](https://travis-ci.org/t3ctechnologies/mariadb) and published on [Docker Hub](https://hub.docker.com/r/t3ctechnologies/mariadb). 
+Images are built via [Travis CI](https://travis-ci.org/t3ctechnologies/mariadb) and published on [Docker Hub](https://hub.docker.com/r/t3ctechnologies/mariadb).
 
 ## Versions
 
-| MariaDB version (Dockerfile) | Alpine Linux version |
+| MariaDB version (Dockerfile) | Centos Linux version |
 | ---------------------------- | -------------------- |
-| [10.1.22](https://github.com/t3ctechnologies/mariadb/tree/master/10.1/Dockerfile) | 3.6 |  
+| [10.2.28](https://github.com/t3ctechnologies/mariadb/tree/master/10.1/Dockerfile) | 3.6 |
 
 ## Environment Variables
 
@@ -22,7 +22,7 @@ Images are built via [Travis CI](https://travis-ci.org/t3ctechnologies/mariadb) 
 | MYSQL_CHARACTER_SET_FILESYSTEM        | utf8                                       | |
 | MYSQL_COLLATION_SERVER                | utf8_unicode_ci                            | |
 | MYSQL_DATABASE                        |                                            | |
-| MYSQL_DEFAULT_CHARACTER_SET           | utf8                                       | | 
+| MYSQL_DEFAULT_CHARACTER_SET           | utf8                                       | |
 | MYSQL_DUMP_MAX_ALLOWED_PACKET         | 1G                                         | |
 | MYSQL_GENERAL_LOG                     | 1                                          | |
 | MYSQL_INIT_CONNECT                    | SET collation_connection = utf8_general_ci | |
@@ -76,16 +76,19 @@ Images are built via [Travis CI](https://travis-ci.org/t3ctechnologies/mariadb) 
 
 Usage:
 ```
+
+cd to the version you want to build
+
 make COMMAND [params ...]
- 
+
 commands:
-    import source=</path/to/dump.zip or http://example.com/url/to/dump.sql.gz> [db root_password host ignore="table1;table2;cache_%"] 
-    backup filepath=</path/to/backup.sql.gz> [root_password host db] 
-    query query [db user password host] 
-    query-silent query [db user password host] 
+    import source=</path/to/dump.zip or http://example.com/url/to/dump.sql.gz> [db root_password host ignore="table1;table2;cache_%"]
+    backup filepath=</path/to/backup.sql.gz> [root_password host db]
+    query query [db user password host]
+    query-silent query [db user password host]
     query-root query [db root_password host]
-    check-ready [root_password host max_try wait_seconds]  
-    
+    check-ready [root_password host max_try wait_seconds]
+
 default params values:
     user $MYSQL_USER
     password $MYSQL_PASSWORD
