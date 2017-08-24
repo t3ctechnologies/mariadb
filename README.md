@@ -11,7 +11,7 @@ Images are built via [Travis CI](https://travis-ci.org/t3ctechnologies/mariadb) 
 
 | MariaDB version (Dockerfile) | Centos Linux version |
 | ---------------------------- | -------------------- |
-| [10.2.28](https://github.com/t3ctechnologies/mariadb/tree/master/10.1/Dockerfile) | 3.6 |
+| [10.2.28](https://github.com/t3ctechnologies/mariadb/tree/master/10.1/Dockerfile) | Centos latest 7 |
 
 ## Environment Variables
 
